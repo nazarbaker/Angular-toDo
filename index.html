@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-app="myapp">
+    <div ng-controller="ToDoCtrl">
+      <h1>Total {{total()}}</h1>
+      <ul>
+        <li ng-repeat="item in toDolist">
+          <input type="checkbox" ng-model="item.status">
+          <span>{{ item.text }}</span>
+        </li>
+      </ul>
+      <input type="text" ng-model="todo">
+      <button type="button" ng-click="addTask()">Add to do</button>
+      <button type="button" ng-click="clear()">Clear Complete</button>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
